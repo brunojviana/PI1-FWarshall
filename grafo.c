@@ -30,7 +30,6 @@ void consultar_adjacencia(grafo *g);
 int main()
 {
     grafo *grafo_g;
-    int sair=0;
 
     grafo_g = cria_grafo();
     preenche_matriz(grafo_g);
