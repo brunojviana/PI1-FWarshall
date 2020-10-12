@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <values.h>
 #define MAXNODES 1000
-#define MAXINT
 
 typedef struct node
 {
@@ -38,7 +37,6 @@ void consultar_adjacencia(grafo *g);
 int main()
 {
     grafo *grafo_g;
-    const int infinito = MAXINT/2;
 
     grafo_g = cria_grafo();
     preenche_matriz(grafo_g);
@@ -135,8 +133,3 @@ void consultar_adjacencia(grafo *g)
     } while (node1 != -1);
 }
 
-matriz_de_distancias *floyd_warshall(grafo *g)
-{
-    
-
-}
