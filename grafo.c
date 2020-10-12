@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <values.h>
 #define MAXNODES 1000
+#define MAXINT
 
 typedef struct node
 {
@@ -21,6 +23,12 @@ typedef struct grafo
     struct arco *matriz_arcos[MAXNODES][MAXNODES];
 } grafo;
 
+typedef struct matriz_de_distancias
+{
+    int distancia[MAXNODES][MAXNODES];
+    int predecessor[MAXNODES][MAXNODES];
+} matriz_de_distancias;
+
 grafo *cria_grafo();
 node *cria_node(int i);
 void preenche_matriz(grafo *g);
@@ -30,7 +38,7 @@ void consultar_adjacencia(grafo *g);
 int main()
 {
     grafo *grafo_g;
-    int sair=0;
+    const int infinito = MAXINT/2;
 
     grafo_g = cria_grafo();
     preenche_matriz(grafo_g);
@@ -125,4 +133,10 @@ void consultar_adjacencia(grafo *g)
             printf("\nNode %d não é adjacente ao Node %d!\n\n", node2, node1);
         }
     } while (node1 != -1);
+}
+
+matriz_de_distancias *floyd_warshall(grafo *g)
+{
+    
+
 }
